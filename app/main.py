@@ -5,14 +5,13 @@ import requests
 
 load_dotenv()
 
-
+URL = "http://api.weatherapi.com/v1/current.json"
 def get_weather() -> None:
-    url = "http://api.weatherapi.com/v1/current.json"
     payload_params = {
         "q": "Paris",
         "key": os.getenv("WEATHER_API_KEY"),
     }
-    result = requests.get(url, params=payload_params)
+    result = requests.get(URL, params=payload_params)
     data = result.json()
     print(
         f"{data['location']['name']}/{data['location']['country']} "
