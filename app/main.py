@@ -6,6 +6,8 @@ import requests
 load_dotenv()
 
 URL = "http://api.weatherapi.com/v1/current.json"
+
+
 def get_weather() -> None:
     payload_params = {
         "q": "Paris",
